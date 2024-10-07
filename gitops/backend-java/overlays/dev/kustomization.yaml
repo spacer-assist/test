@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+images:
+  - name: eduazureregistry.azurecr.io/backend-java # 이미지 주소 변경필요
+    newTag: main-20240712064746
+
+commonLabels:
+  app: backend-java
+  environment: dev
